@@ -1,0 +1,384 @@
+/* layout.css */
+/* Header styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+}
+header img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Adjust spacing */
+    margin-left: 10px;
+}
+
+.header-content {
+    flex-grow: 1; /* Allows the content to take remaining space */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-content  h1 {
+    color: #fff;
+    margin-left: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-content img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 0;
+    top: 100%;
+}
+
+.dropdown-content .column {
+    float: left;
+    width: 50%;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropdown:hover .column {
+    display: block;
+}
+
+/* Clearfix for columns */
+.dropdown-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Main section styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+article {
+    flex: 3;
+    margin-right: 1rem;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar img {
+    /* Ensure the image is a block element display: block; */
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+
+/* Form styles */
+form {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+footer nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Social Sharing Styles */
+.social-sharing {
+    margin-top: 1rem;
+}
+
+.social-sharing a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #0073b1;
+    transition: 0.3s;
+}
+
+.social-sharing a i {
+    margin-right: 0.5rem;
+}
+
+.social-sharing a:hover {
+    background: #005582;
+}
+
+.social-sharing a:nth-child(1) {
+    background: #1da1f2;
+}
+
+.social-sharing a:nth-child(1):hover {
+    background: #0d95e8;
+}
+
+.social-sharing a:nth-child(2) {
+    background: #3b5998;
+}
+
+.social-sharing a:nth-child(2):hover {
+    background: #2d4373;
+}
+
+/* Grid styles for chapters */
+.chapters-section h2 {
+    margin-bottom: 1rem;
+}
+
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.chapters-grid li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.chapters-grid li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.chapters-grid li:hover {
+    background: #eee;
+}
+
+.chapters-grid > div:hover {
+    background: #eee;
+}
+
+/* Grid styles for shloka list */
+#shloka-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.shloka-container {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    
+}
+
+.shloka-container:hover {
+    background: #eee;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    article {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar {
+        align-items: flex-start;
+    }
+
+    footer nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    .chapters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #shloka-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 10px 20px;
+    }
+
+    .header-content img {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+
+    .shloka {
+        font-size: 16px;
+    }
+
+    header, footer {
+        padding: 0.5rem 0;
+    }
+    #shloka-list {
+        grid-template-columns: 1fr;
+    }
+    .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+    header, footer {
+        padding: 0.5rem 0;
+    }
+    .social-sharing a {
+        display: block;
+        padding: 0.5rem 0;
+        margin: 1.5rem 0;
+    }
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px;
+    }
+
+    .header-content img {
+        height: 40px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+}
+
+

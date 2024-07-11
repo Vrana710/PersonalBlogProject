@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Karma Vairagya Yoga (The Yoga of Renunciation of Action)</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Bhagavad Gita Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../Pages/about.html">About</a></li>
+                    <li><a href="../Pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img src="../../assets/images/logo.jpg" alt="Bhagavad Gita Blog Logo">
+    </header>
+    <main>
+        <section>
+            <div class="chapter">
+                <h2>
+                    <a href="../../index.html">Chapter 5: Karma Vairagya Yoga (The Yoga of Renunciation of Action)</a>
+                </h2>
+                 <div id="chapter-content">
+
+                    <script>
+                        async function fetchChapter() {
+                            const apiUrl = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/?skip=0&limit=18';
+                            const headers = {
+                                'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com',
+                                'x-rapidapi-key': '86f8b0591fmshfe9efe48ca0a473p1ff713jsnd95e46c20fac'
+                            };
+                
+                            try {
+                                const response = await fetch(apiUrl, { headers });
+                
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                
+                                const data = await response.json();
+                                return data;
+                            } catch (error) {
+                                console.error('Error fetching chapter data:', error);
+                                return null;
+                            }
+                        }
+                
+                        async function displayChapter() {
+                            const chapterContent = document.getElementById('chapter-content');
+                            const data = await fetchChapter();
+                
+                            if (!data) {
+                                chapterContent.innerHTML = '<p>Error fetching chapter data. Please try again later.</p>';
+                                return;
+                            }
+                
+                            const chapter = data.find(chap => chap.chapter_number === 5);
+                            console.log(chapter);
+
+                            if (!chapter) {
+                                chapterContent.innerHTML = '<p>Chapter not found.</p>';
+                                return;
+                            }
+                
+                            const chapterHTML = `
+                                <div class="chapters-grid">
+                                    <div>
+                                        <strong>Summary:</strong> ${chapter.chapter_summary}
+                                    </div>
+                                    <div>
+                                        <strong>Chapter ${chapter.chapter_number}: ${chapter.name}</strong>
+                                        <strong>Summary:</strong> ${chapter.chapter_summary_hindi}
+                                    </div>
+                                    <div>
+                                        <a href="../shlokas/chapter1-shloka.html">
+                                            <strong>Read more Verses:</strong> ${chapter.verses_count}
+                                        </a>
+                                        <div class="sidebar">
+                                                <img src="../../assets/images/image2.jpg" alt="Bhagavad Gita" width="70%" height="100%">
+                                        </div>
+
+                                        <div class="social-sharing">
+                                            <div class="chapters-grid">
+                                                <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
+                                                    <i class="fab fa-twitter"></i> Twitter
+                                                </a>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
+                                                    <i class="fab fa-facebook-f"></i> Facebook
+                                                </a>
+                                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
+                                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                                </a>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            chapterContent.innerHTML = chapterHTML;
+                        }
+                
+                        // Call displayChapter function to fetch and display chapter data
+                        displayChapter();
+                    </script>
+
+                </div>
+            </div>
+           
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bhagavad Gita Blog by Varsha R. Rana</p>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../Pages/about.html">About</a></li>
+                <li><a href="../Pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-sharing">
+            <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+        </div>
+    </footer>
+  
+</body>
+
+</html>
+

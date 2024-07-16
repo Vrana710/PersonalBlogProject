@@ -12,131 +12,119 @@
 
 <body>
     <header>
-        <div class="header-content">
-            <h1>Bhagavad Gita Blog</h1>
-            <nav>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../Pages/about.html">About</a></li>
-                    <li><a href="../Pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <img src="../../assets/images/logo.jpg" alt="Bhagavad Gita Blog Logo">
+        <!-- Content will be populated by JavaScript -->
     </header>
     <main>
         <section>
             <div class="chapter">
                 <h2>
-                    <a href="../../index.html">Chapter 17: Sraddhatraya Vibhaga Yoga (The Yoga of the Threefold Faith)</a>
+                    <a href="../../index.html">Chapter 17: Sraddhatraya Vibhaga Yoga (The Yoga of the Threefold
+                        Faith)</a>
                 </h2>
                 <div id="chapter-content">
-
-                    <script>
-                        async function fetchChapter() {
-                            const apiUrl = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/?skip=0&limit=18';
-                            const headers = {
-                                'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com',
-                                'x-rapidapi-key': '86f8b0591fmshfe9efe48ca0a473p1ff713jsnd95e46c20fac'
-                            };
-
-                            try {
-                                const response = await fetch(apiUrl, { headers });
-
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok');
-                                }
-
-                                const data = await response.json();
-                                return data;
-                            } catch (error) {
-                                console.error('Error fetching chapter data:', error);
-                                return null;
-                            }
-                        }
-
-                        async function displayChapter() {
-                            const chapterContent = document.getElementById('chapter-content');
-                            const data = await fetchChapter();
-
-                            if (!data) {
-                                chapterContent.innerHTML = '<p>Error fetching chapter data. Please try again later.</p>';
-                                return;
-                            }
-
-                            const chapter = data.find(chap => chap.chapter_number === 17);
-                            console.log(chapter);
-
-                            if (!chapter) {
-                                chapterContent.innerHTML = '<p>Chapter not found.</p>';
-                                return;
-                            }
-
-                            const chapterHTML = `
-                                <div class="chapters-grid">
-                                    <div>
-                                        <strong>Summary:</strong> ${chapter.chapter_summary}
-                                    </div>
-                                    <div>
-                                        <strong>Chapter ${chapter.chapter_number}: ${chapter.name}</strong>
-                                        <strong>Summary:</strong> ${chapter.chapter_summary_hindi}
-                                    </div>
-                                    <div>
-                                        <a href="../shlokas/chapter1-shloka.html">
-                                            <strong>Read more Verses:</strong> ${chapter.verses_count}
-                                        </a>
-                                        <div class="sidebar">
-                                                <img src="../../assets/images/image2.jpg" alt="Bhagavad Gita" width="70%" height="100%">
-                                        </div>
-                                        <div class="social-sharing">
-                                            <div class="chapters-grid">
-                                                <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
-                                                    <i class="fab fa-twitter"></i> Twitter
-                                                </a>
-                                                <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
-                                                    <i class="fab fa-facebook-f"></i> Facebook
-                                                </a>
-                                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
-                                                    <i class="fab fa-linkedin-in"></i> LinkedIn
-                                                </a>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                            chapterContent.innerHTML = chapterHTML;
-                        }
-
-                        // Call displayChapter function to fetch and display chapter data
-                        displayChapter();
-                    </script>
-
+                    <!-- Content will be populated by JavaScript -->
                 </div>
             </div>
-            
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Bhagavad Gita Blog by Varsha R. Rana</p>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../Pages/about.html">About</a></li>
-                <li><a href="../Pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-sharing">
-            <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-        </div>
+        <!-- Content will be populated by JavaScript -->
     </footer>
+    <script>
+        async function fetchChapter() {
+            const apiUrl = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/?skip=0&limit=18';
+            const headers = {
+                'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com',
+                'x-rapidapi-key': '86f8b0591fmshfe9efe48ca0a473p1ff713jsnd95e46c20fac'
+            };
+
+            try {
+                const response = await fetch(apiUrl, { headers });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching chapter data:', error);
+                return null;
+            }
+        }
+
+        async function displayChapter() {
+            const chapterContent = document.getElementById('chapter-content');
+            const data = await fetchChapter();
+
+            if (!data) {
+                chapterContent.innerHTML = '<p>Error fetching chapter data. Please try again later.</p>';
+                return;
+            }
+
+            const chapter = data.find(chap => chap.chapter_number === 17);
+            console.log(chapter);
+
+            if (!chapter) {
+                chapterContent.innerHTML = '<p>Chapter not found.</p>';
+                return;
+            }
+
+            const chapterHTML = `
+                <div class="chapters-grid">
+                    <div>
+                        <strong>Summary:</strong> ${chapter.chapter_summary}
+                    </div>
+                    <div>
+                        <strong>Chapter ${chapter.chapter_number}: ${chapter.name}</strong>
+                        <strong>Summary:</strong> ${chapter.chapter_summary_hindi}
+                    </div>
+                    <div>
+                        <a href="../shlokas/chapter17-shloka.html">
+                            <strong>Read more Verses:</strong> ${chapter.verses_count}
+                        </a>
+                        <div class="sidebar">
+                                <a href="../shlokas/chapter17-shloka.html">
+                                    <figure class="figureImage">
+                                        <img src="../../assets/images/image2.jpg"
+                                          alt="Bhagavad Gita" width="70%" height="100%">
+                                           <figcaption>Explore and Learn the Bhagavad Gita Anywhere, Anytime!</figcaption>
+                                    </figure>
+                                </a>
+                        </div>
+                        <div>
+                                <h5>Write Comment</h5>
+                                    <form action="#" method="">
+                                        <input type="text" id="comment" name="comment" required>
+                                        <button type="submit">
+                                            <i class="fas fa-paper-plane"></i> Send
+                                        </button>
+                                    </form>
+                        </div>
+                        <div class="social-sharing">
+                            <div class="chapters-grid">
+                                <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            `;
+            chapterContent.innerHTML = chapterHTML;
+        }
+
+        // Call displayChapter function to fetch and display chapter data
+        displayChapter();
+    </script>
+    <script src="../../common/header.js"></script>
+    <script src="../../common/footer.js"></script>
 </body>
 
 </html>

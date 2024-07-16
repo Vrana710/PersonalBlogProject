@@ -11,19 +11,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Bhagavad Gita Blog</h1>
-            <nav>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../Pages/about.html">About</a></li>
-                    <li><a href="../Pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <img src="../../assets/images/logo.jpg" alt="Bhagavad Gita Blog Logo">
-    </header>
+    <header><!-- Content will be populated by JavaScript --></header>
     <main>
         <section>
             <div class="chapter">
@@ -36,27 +24,7 @@
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Bhagavad Gita Blog by Varsha R. Rana</p>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../Pages/about.html">About</a></li>
-                <li><a href="../Pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-sharing">
-            <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-        </div>
-    </footer>
+    <footer><!-- Content will be populated by JavaScript --></footer>
 
     <script>
         async function fetchChapter() {
@@ -111,11 +79,24 @@
                         <a href="../shlokas/chapter1-shloka.html">
                             <strong>Read more Verses:</strong> ${chapter.verses_count}
                         </a>
-                            <div class="sidebar">
-                                 <img src="../../assets/images/image2.jpg"
+                        <div class="sidebar">
+                                <a href="../shlokas/chapter1-shloka.html">
+                                    <figure class="figureImage">
+                                        <img src="../../assets/images/image2.jpg"
                                           alt="Bhagavad Gita" width="70%" height="100%">
-                            </div>
-
+                                           <figcaption>Explore and Learn the Bhagavad Gita Anywhere, Anytime!</figcaption>
+                                    </figure>
+                                </a>
+                        </div>
+                        <div>
+                                <h5>Write Comment</h5>
+                                    <form action="#" method="">
+                                        <input type="text" id="comment" name="comment" required>
+                                        <button type="submit">
+                                            <i class="fas fa-paper-plane"></i> Send
+                                        </button>
+                                    </form>
+                        </div>
                         <div class="social-sharing">
                             <div class="chapters-grid">
                                 <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
@@ -134,10 +115,11 @@
             `;
             chapterContent.innerHTML = chapterHTML;
         }
-
         // Call displayChapter function to fetch and display chapter data
         displayChapter();
     </script>
+    <script src="../../common/header.js"></script>
+    <script src="../../common/footer.js"></script>
 </body>
 
 </html>

@@ -1,53 +1,52 @@
 /* layout.css */
+
 /* Header styles */
 header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
-    text-align: center;
     display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
 }
+
+header h1 {
+    color: #fff;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 1rem; /* Add space between heading and menu */
+    z-index: 2; /* Ensure the heading stays on top of the menu */
+}
+
 header img {
     width: 100px; /* Adjust size as needed */
     height: auto;
     margin-right: 10px; /* Adjust spacing */
-    margin-left: 10px;
-}
-
-.header-content {
-    flex-grow: 1; /* Allows the content to take remaining space */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.header-content  h1 {
-    color: #fff;
-    margin-left: 10px;
 }
 
 header nav ul {
     list-style: none;
+    text-align: center;
     padding: 0;
+    margin: 0; /* Remove default margin */
+    display: flex; /* Display as flex */
+    gap: 1rem; /* Add gap between list items */
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 1rem;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 0.5rem 1rem; /* Add padding for clickable area */
+    transition: background-color 0.3s; /* Smooth hover transition */
 }
 
-.header-content img {
-    height: 50px;
-    margin-left: 20px;
+header nav ul li a:hover {
+    background-color: #555; /* Background color on hover */
 }
-
 
 /* Dropdown styles */
 .dropdown {
@@ -76,6 +75,7 @@ header nav ul li a {
     padding: 10px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s; /* Smooth hover transition */
 }
 
 .dropdown-content a:hover {
@@ -98,6 +98,31 @@ header nav ul li a {
     clear: both;
 }
 
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+   
+}
+  
+figcaption h2{
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+    font-size: 42px;
+}
 
 /* Main section styles */
 main {
@@ -113,12 +138,11 @@ article {
 
 .sidebar {
     flex: 1;
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sidebar img {
+.sidebar .figureImage img {
     /* Ensure the image is a block element display: block; */
     width: 100%; /* Ensure the image takes up the full width of its container */
     height: auto; /* Maintain aspect ratio */
@@ -168,16 +192,25 @@ footer nav ul {
     list-style: none;
     text-align: center;
     padding: 0;
+    margin: 0; /* Remove default margin */
+    display: flex; /* Display as flex */
+    justify-content: center; /* Center align the items */
+    gap: 1rem; /* Add gap between list items */
 }
 
 footer nav ul li {
     display: inline;
-    margin: 0 1rem;
 }
 
 footer nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 0.5rem 1rem; /* Add padding for clickable area */
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+footer nav ul li a:hover {
+    background-color: #555; /* Background color on hover */
 }
 
 /* Social Sharing Styles */
@@ -308,7 +341,7 @@ footer nav ul li a {
     #shloka-list {
         grid-template-columns: repeat(2, 1fr);
     }
-    .header-content {
+    header {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -327,9 +360,7 @@ footer nav ul li a {
         padding: 10px 20px;
     }
 
-    .header-content img {
-        margin-left: 0;
-    }
+   
 }
 
 @media (max-width: 480px) {
@@ -358,7 +389,7 @@ footer nav ul li a {
         padding: 0.5rem 0;
         margin: 1.5rem 0;
     }
-    .header-content {
+    header {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -373,7 +404,7 @@ footer nav ul li a {
         padding: 10px 15px;
     }
 
-    .header-content img {
+    header img {
         height: 40px;
         margin-left: 0;
         margin-top: 10px;

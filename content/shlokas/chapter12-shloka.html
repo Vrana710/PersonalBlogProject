@@ -12,130 +12,106 @@
 
 <body>
     <header>
-        <div class="header-content">
-            <h1>Bhagavad Gita Blog</h1>
-            <nav>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../Pages/about.html">About</a></li>
-                    <li><a href="../Pages/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <img src="../../assets/images/logo.jpg" alt="Bhagavad Gita Blog Logo">
+        <!-- Content will be populated by JavaScript -->
     </header>
     <main>
         <article>
             <h1>
                 <a href="../chapters/chapter12.html">Chapter 12: Bhakti Yoga (The Yoga of Devotion)</a>
             </h1>
-            <div id="shloka-list"></div>
-            <script>
-                async function fetchShlokas() {
-                    const apiUrl = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/12/verses/';
-
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: 'GET',
-                            headers: {
-                                'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com',
-                                'x-rapidapi-key': '86f8b0591fmshfe9efe48ca0a473p1ff713jsnd95e46c20fac'
-                            }
-                        });
-
-
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok.');
-                        }
-
-                        const data = await response.json();
-
-                        console.log(data);
-
-                        return data; // Assuming API returns an array of verses
-                    } catch (error) {
-                        console.error('Error fetching shlokas:', error);
-                        return null; // Return null if there's an error
-                    }
-                }
-
-                // Function to display shlokas on the webpage
-                async function displayShlokas() {
-                    const shlokaList = document.getElementById('shloka-list');
-                    const shlokas = await fetchShlokas();
-
-                    if (!shlokas || shlokas.length === 0) {
-                        shlokaList.innerHTML = '<p>Error fetching shlokas. Please try again later.</p>';
-                        return;
-                    }
-
-                    shlokaList.innerHTML = ''; // Clear previous content
-
-                    shlokas.forEach(shloka => {
-                        const translationsHTML = shloka.translations.map(translation => `
-                            <p class="translation"><strong>${translation.author_name}:</strong> ${translation.description}</p>
-                            `).join('');
-
-                         const shlokaHTML = `
-                            <div class="shloka-container">
-                                <h2>Shloka ${shloka.verse_number}</h2>
-                                <p class="shloka">${shloka.text}</p>
-                                ${translationsHTML}
-                                <div>
-                                    <h5>Write Comment</h5>
-                                        <form action="#" method="post">
-                                            <input type="text" id="comment" name="comment" required>
-                                            <button type="submit">
-                                                <i class="fas fa-paper-plane"></i> Send
-                                            </button>
-                                        </form>
-                                </div>
-                                <div class="social-sharing">
-                                   <div class="chapters-grid">
-                                        <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
-                                            <i class="fab fa-twitter"></i> Twitter
-                                        </a>
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
-                                            <i class="fab fa-facebook-f"></i> Facebook
-                                        </a>
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
-                                            <i class="fab fa-linkedin-in"></i> Linkedin
-                                        </a>
-                                    </div>   
-                                </div>
-                            </div>
-                        `;
-                        shlokaList.innerHTML += shlokaHTML;
-                    });
-
-                }
-
-                // Call displayShlokas function to fetch and display shlokas
-                displayShlokas();
-            </script>
+            <div id="shloka-list">
+                <!-- Content will be populated by JavaScript -->
+            </div>
         </article>
     </main>
     <footer>
-        <p>&copy; 2024 Bhagavad Gita Blog by Varsha R. Rana</p>
-        <nav>
-            <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../Pages/about.html">About</a></li>
-                <li><a href="../Pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-sharing">
-            <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-        </div>
+        <!-- Content will be populated by JavaScript -->
     </footer>
+    <script>
+        async function fetchShlokas() {
+            const apiUrl = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/12/verses/';
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'x-rapidapi-host': 'bhagavad-gita3.p.rapidapi.com',
+                        'x-rapidapi-key': '86f8b0591fmshfe9efe48ca0a473p1ff713jsnd95e46c20fac'
+                    }
+                });
+
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+
+                const data = await response.json();
+
+                console.log(data);
+
+                return data; // Assuming API returns an array of verses
+            } catch (error) {
+                console.error('Error fetching shlokas:', error);
+                return null; // Return null if there's an error
+            }
+        }
+
+        // Function to display shlokas on the webpage
+        async function displayShlokas() {
+            const shlokaList = document.getElementById('shloka-list');
+            const shlokas = await fetchShlokas();
+
+            if (!shlokas || shlokas.length === 0) {
+                shlokaList.innerHTML = '<p>Error fetching shlokas. Please try again later.</p>';
+                return;
+            }
+
+            shlokaList.innerHTML = ''; // Clear previous content
+
+            shlokas.forEach(shloka => {
+                const translationsHTML = shloka.translations.map(translation => `
+                    <p class="translation"><strong>${translation.author_name}:</strong> ${translation.description}</p>
+                    `).join('');
+
+                const shlokaHTML = `
+                    <div class="shloka-container">
+                        <h2>Shloka ${shloka.verse_number}</h2>
+                        <p class="shloka">${shloka.text}</p>
+                        ${translationsHTML}
+                        <div>
+                            <h5>Write Comment</h5>
+                                <form action="#" method="">
+                                    <input type="text" id="comment" name="comment" required>
+                                    <button type="submit">
+                                        <i class="fas fa-paper-plane"></i> Send
+                                    </button>
+                                </form>
+                        </div>
+                        <div class="social-sharing">
+                           <div class="chapters-grid">
+                                <a href="https://twitter.com/share?url=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=URL_TO_SHARE" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i> Linkedin
+                                </a>
+                            </div>   
+                        </div>
+                    </div>
+                `;
+                shlokaList.innerHTML += shlokaHTML;
+            });
+
+        }
+
+        // Call displayShlokas function to fetch and display shlokas
+        displayShlokas();
+    </script>
+    <script src="../../common/header.js"></script>
+    <script src="../../common/footer.js"></script>
 </body>
 
 </html>

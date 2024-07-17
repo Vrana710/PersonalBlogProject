@@ -123,6 +123,12 @@ Then open your browser and go to `http://localhost:8080`.
 - **Font Awesome** for icons
 - **Favicon** for browser tab icon
 
+## Screenshort of the Project
+
+```
+
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

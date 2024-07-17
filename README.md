@@ -8,7 +8,7 @@ The Bhagavad Gita Blog is a web project designed to provide users with easy acce
 
 - **Responsive Design**: The blog is accessible on various devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
 - **Interactive Navigation**: The sidebar and chapters list allow for easy navigation through the different chapters of the Bhagavad Gita.
-- **Dynamic Content**: Header and footer content are populated dynamically through API using JavaScript.
+- **Dynamic Content**: Header and footer content are populated dynamically through **API** using JavaScript.
 
 ## Screenshot
 

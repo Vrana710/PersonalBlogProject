@@ -10,6 +10,15 @@ The Bhagavad Gita Blog is a web project designed to provide users with easy acce
 - **Interactive Navigation**: The sidebar and chapters list allow for easy navigation through the different chapters of the Bhagavad Gita.
 - **Dynamic Content**: Header and footer content are populated dynamically using JavaScript.
 
+## Screenshot
+
+![Bhagavad Gita Blog Index Page](./assets/images/index.png)
+![Bhagavad Gita Blog About Page](./assets/images/about.png)
+![Bhagavad Gita Blog Contact Page](./assets/images/contact.png)
+![Bhagavad Gita Blog Chapter Page](./assets/images/chapter.png)
+![Bhagavad Gita Blog Shloka Page](./assets/images/shloka.png)
+
+
 ## Project Structure
 
 The project consists of the following main files and directories:
@@ -122,12 +131,6 @@ Then open your browser and go to `http://localhost:8080`.
 - **JavaScript**
 - **Font Awesome** for icons
 - **Favicon** for browser tab icon
-
-## Screenshort of the Project
-
-```
-
-```
 
 ## License
 

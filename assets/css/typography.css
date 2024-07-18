@@ -14,8 +14,12 @@ h2{
     text-align: center;
 }
 
-p {
-    margin: 10px 0;
+blockquote{
+    font-style: italic;
+    color: #666;
+    margin: 1px;
+    padding: 1px;
+    text-align: justify;
 }
 
 .shloka-container {
@@ -27,9 +31,15 @@ p {
 .shloka {
     font-size: 18px;
     font-style: italic;
+    text-align: justify;
     margin: 5px 0;
 }
 
 .translation {
     margin: 5px 0;
+}
+
+#datetime {
+    font-size: 1.5em;
+    font-family: Arial, sans-serif;
 }

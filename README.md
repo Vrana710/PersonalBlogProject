@@ -8,7 +8,7 @@ The Bhagavad Gita Blog is a web project designed to provide users with easy acce
 
 - **Responsive Design**: The blog is accessible on various devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
 - **Interactive Navigation**: The sidebar and chapters list allow for easy navigation through the different chapters of the Bhagavad Gita.
-- **Dynamic Content**: Header and footer content are populated dynamically through **API** using JavaScript.
+- **Dynamic Content**: Header and footer content are populated dynamically using JavaScript.
 
 ## Screenshot
 
@@ -40,43 +40,11 @@ The project consists of the following main files and directories:
 │   │   └── IndiaMap.jpg
 ├── content
 │   ├── chapters
-│   │   ├── chapter1.html
-│   │   ├── chapter2.html
-│   │   ├── chapter3.html
-│   │   ├── chapter4.html
-│   │   ├── chapter5.html
-│   │   ├── chapter6.html
-│   │   ├── chapter7.html
-│   │   ├── chapter8.html
-│   │   ├── chapter9.html
-│   │   ├── chapter10.html
-│   │   ├── chapter11.html
-│   │   ├── chapter12.html
-│   │   ├── chapter13.html
-│   │   ├── chapter14.html
-│   │   ├── chapter15.html
-│   │   ├── chapter16.html
-│   │   ├── chapter17.html
-│   │   └── chapter18.html
+│   │   ├── chapter.html
+│   │   └── chapter.js
 │   ├── shlokas
-│   │   ├── chapter1-shloka.html
-│   │   ├── chapter2-shloka.html
-│   │   ├── chapter3-shloka.html
-│   │   ├── chapter4-shloka.html
-│   │   ├── chapter5-shloka.html
-│   │   ├── chapter6-shloka.html
-│   │   ├── chapter7-shloka.html
-│   │   ├── chapter8-shloka.html
-│   │   ├── chapter9-shloka.html
-│   │   ├── chapter10-shloka.html
-│   │   ├── chapter11-shloka.html
-│   │   ├── chapter12-shloka.html
-│   │   ├── chapter13-shloka.html
-│   │   ├── chapter14-shloka.html
-│   │   ├── chapter15-shloka.html
-│   │   ├── chapter16-shloka.html
-│   │   ├── chapter17-shloka.html
-│   │   └── chapter18-shloka.html
+│   │   ├── shloka.html
+│   │   └── shloka.js
 │   ├── Pages
 │   │   ├── about.html
 │   │   └── contact.html

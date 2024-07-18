@@ -104,6 +104,7 @@ figure {
     flex-flow: column;
     padding: 5px;
     margin: auto;
+    list-style-type: none;
 }
 
 figcaption {
@@ -124,16 +125,26 @@ figcaption h2{
     font-size: 42px;
 }
 
-/* Main section styles */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
+.container {
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
 }
 
-article {
-    flex: 3;
-    margin-right: 1rem;
+.main-grid {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Main section styles */
+main {
+    padding: 1rem;
 }
 
 .sidebar {
@@ -148,6 +159,67 @@ article {
     height: auto; /* Maintain aspect ratio */
     
 }
+
+/* side section styles */
+aside {
+    background-color: #f9f9f9;
+    padding: 0px;
+    margin-top: 0px;
+    display: block;
+    unicode-bidi: isolate;
+    border: 1px;
+    border-color: #666;
+}
+
+.author-info {
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.bio {
+    font-style: italic;
+}
+
+.related-posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.related-posts a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Initially hide the read more button */
+.chapter-link {
+    position: relative; /* Ensure relative positioning for absolute child */
+    display: inline-block; /* Ensure block-like behavior for absolute child */
+}
+
+.read-more {
+    position: absolute;
+    top: 50%; /* Position below the link */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    display: none; /* Initially hide the button */
+    padding: 5px 10px;
+    background-color: #3d9006;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    z-index: 1000; /* Ensure it's above other content */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+
+.chapter-link:hover .read-more {
+    display: block; /* Show button on hover */
+}
+
 
 /* Form styles */
 form {
@@ -254,6 +326,68 @@ footer nav ul li a:hover {
     background: #2d4373;
 }
 
+/* Grid styles for social */
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-grid li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-grid li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.social-grid li:hover {
+    background: #eee;
+}
+
+.social-grid > div:hover {
+    background: #eee;
+}
+
+/* Grid styles for contact */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-grid li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-grid li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-grid li:hover {
+    background: #eee;
+}
+
+.contact-grid > div:hover {
+    background: #eee;
+}
+
 /* Grid styles for chapters */
 .chapters-section h2 {
     margin-bottom: 1rem;
@@ -312,6 +446,10 @@ footer nav ul li a:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .container{
+        width: 90%;
+    }
+
     header nav ul li {
         display: block;
         margin: 0.5rem 0;
@@ -320,6 +458,7 @@ footer nav ul li a:hover {
     main {
         flex-direction: column;
         padding: 0.5rem;
+        margin: 1rem;
     }
 
     article {
@@ -335,17 +474,30 @@ footer nav ul li a:hover {
         display: block;
         margin: 0.5rem 0;
     }
+    .main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .chapters-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
     #shloka-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 2fr;
     }
     header {
         flex-direction: column;
         align-items: flex-start;
     }
-
+    aside {
+        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .dropdown-content {
         position: static;
         box-shadow: none;
@@ -364,6 +516,10 @@ footer nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
+    .container{
+        width: 90%;
+    }
+
     body {
         margin: 10px;
     }
@@ -375,10 +531,19 @@ footer nav ul li a:hover {
     header, footer {
         padding: 0.5rem 0;
     }
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
     #shloka-list {
         grid-template-columns: 1fr;
     }
     .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .social-grid {
         grid-template-columns: 1fr;
     }
     header, footer {
@@ -392,6 +557,11 @@ footer nav ul li a:hover {
     header {
         flex-direction: column;
         align-items: flex-start;
+    }
+    aside {
+        flex-direction: column;
+        align-items: flex-start;
+        display: block;
     }
 
     .dropdown-content {

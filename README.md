@@ -9,6 +9,7 @@ The Bhagavad Gita Blog is a web project designed to provide users with easy acce
 - **Responsive Design**: The blog is accessible on various devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
 - **Interactive Navigation**: The sidebar and chapters list allow for easy navigation through the different chapters of the Bhagavad Gita.
 - **Dynamic Content**: Header and footer content are populated dynamically using JavaScript.
+- **API**: Bhagavad Gita API is an open-source REST API
 
 ## Screenshot
 
@@ -113,6 +114,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - The structure and content of the Bhagavad Gita Blog are inspired by the sacred text of the Bhagavad Gita.
 - Icons by [Font Awesome](https://fontawesome.com/).
+- [Bhagavad Gita API is an open-source REST API](https://rapidapi.com/bhagavad-gita-bhagavad-gita-default/api/bhagavad-gita3).
 
 ## Contact
 
